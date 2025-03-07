@@ -1,0 +1,5 @@
+##
+    Configuração do Git:
+        git config --global user.name KeevinZ
+        git config --global user.email kevin1080p.mdm@gmail.com
+##
