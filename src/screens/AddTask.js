@@ -37,7 +37,7 @@ export default function AddTask(props){
             </View>
         )
     }
-
+    return datePicker
 }   
 
     return(
@@ -59,6 +59,9 @@ export default function AddTask(props){
                     placeholder="Informe a Descrição"
                     onChangeText={setDesc}
                     value={desc} />
+
+                {this.getDatePicker()}
+                    
                 <View style={styles.buttons}>
                     <TouchableOpacity onPress={props.onCancel}>
                         <Text style={styles.button}>Cancelar</Text>
