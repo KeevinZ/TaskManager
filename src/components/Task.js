@@ -1,14 +1,15 @@
 import {View, Text, StyleSheet, TouchableWithoutFeedback} from 'react-native'
-import commonStyles from '../commonStyles'
 import moment from 'moment-timezone'
 import 'moment/locale/pt-br'
+
+import commonStyles from '../commonStyles'
 import Icon from "react-native-vector-icons/FontAwesome"
 
 export default props => {
-    
+
     const date = props.doneAt ? props.doneAt : props.estimateAt
     const formattedDate = moment(date).tz('America/Sao_Paulo').locale('pt-br').format('ddd, D [de] MMMM')
-    
+
     const doneOrNotStyle = props.doneAt != null ? {textDecorationLine: 'line-through'} : {}
 
     return(
@@ -26,19 +27,20 @@ export default props => {
     )
 }
 
-function getCheckView(doneAt){
-    if(doneAt != null){
+function getCheckView(doneAt) {
+    if(doneAt != null) {
         return(
             <View style={styles.done}>
-                <Icon name='check' size={20} color='#fff' />
+                <Icon name='check'size={20} color='#fff' />
             </View>
         )
-    } else{
+    } else {
         return(
             <View style={styles.pending}></View>
-        )
+        ) 
     }
 }
+
 
 const styles = StyleSheet.create({
     container: {
@@ -69,12 +71,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    date: {
-        color: '#555',
-        fontSize: 12
-    },
     desc: {
         color: commonStyles.colors.mainText,
         fontSize: 15
+    },
+    date: {
+        color: '#555',
+        fontSize: 12
     }
 })
